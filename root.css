@@ -1,0 +1,144 @@
+:root {
+  /* ===== Brand Colors ===== */
+  --color-primary: #1a3a5c;
+  --color-primary-dark: #12293f;
+  --color-primary-light: #2c5580;
+  --color-secondary: #c9a227;
+  --color-secondary-dark: #a5841e;
+
+  /* ===== Text Colors ===== */
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #767676;
+  --color-text-inverse: #ffffff;
+  --color-text-link: var(--color-primary);
+
+  /* ===== Background Colors ===== */
+  --color-bg-body: #f5f6f8;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-alt: #f0f1f3;
+  --color-bg-header: var(--color-primary);
+  --color-bg-footer: var(--color-primary-dark);
+  --color-bg-disabled: #e8e8e8;
+
+  /* ===== Status Colors ===== */
+  --color-success: #1e7d3a;
+  --color-success-bg: #e6f4ea;
+  --color-warning: #a3660a;
+  --color-warning-bg: #fdf1e0;
+  --color-error: #b3261e;
+  --color-error-bg: #fbe9e8;
+
+  /* ===== Border ===== */
+  --color-border: #000000;
+  --border-default: 1px solid var(--color-border);
+  --border-radius: 6px;
+  --border-radius-full: 999px;
+
+  /* ===== Spacing Scale ===== */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* ===== Typography ===== */
+  --font-family-base: 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.375rem;
+  --font-size-xl: 1.75rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-base: 1.5;
+
+  /* ===== Shadows ===== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.10);
+
+  /* ===== Sizing ===== */
+  --header-height: 64px;
+  --sidebar-width: 260px;
+  --container-max-width: 1440px;
+
+  /* ===== Transitions ===== */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+
+  /* ===== Z-Index ===== */
+  --z-header: 100;
+  --z-mobile-nav: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+}
+
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-body);
+  min-height: 100vh;
+  width: 100%;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-surface-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-light);
+  border-radius: var(--border-radius-full);
+}
