@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — Janaki Professional Academy ERP</title>
+<link rel="stylesheet" href="css/root.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app-body">
+
+<header class="site-header">
+  <div class="header-brand">
+    <div class="header-brand__logo">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 4L36 12V16L20 24L4 16V12L20 4Z" fill="#c9a227"/>
+        <path d="M10 18V28L20 33L30 28V18L20 23L10 18Z" fill="#ffffff"/>
+      </svg>
+    </div>
+    <div class="header-brand__text">
+      <span class="header-brand__name">Janaki Professional Academy</span>
+      <span class="header-brand__subtitle">School Management ERP</span>
+    </div>
+  </div>
+  <div class="header-actions">
+    <a href="index.html" class="btn btn--ghost">Back to Home</a>
+  </div>
+</header>
+
+<main class="app-main">
+  <section class="section flex flex--center" style="min-height: calc(100vh - var(--header-height) - 120px);">
+    <div class="card" style="width: 100%; max-width: 420px;">
+      <div style="text-align: center; margin-bottom: var(--space-lg);">
+        <h1 class="heading-md">Sign in to your account</h1>
+        <p class="text-sm text-muted" style="margin-top: var(--space-xs);">Enter your credentials to access the ERP.</p>
+      </div>
+
+      <div id="login-alert" class="alert alert--error" style="display: none; margin-bottom: var(--space-md);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        <span id="login-alert-message">Invalid email or password.</span>
+      </div>
+
+      <form id="login-form" data-validate novalidate>
+        <div class="form-group">
+          <label class="form-label" for="email">Email<span class="form-label__required">*</span></label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="you@janakipa.com" required>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password<span class="form-label__required">*</span></label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="flex flex--between" style="margin-bottom: var(--space-lg);">
+          <label class="form-check">
+            <input type="checkbox" id="remember" name="remember">
+            <span class="text-sm">Remember me</span>
+          </label>
+          <a href="forgot-password.html" class="text-sm" style="color: var(--color-primary);">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--full" id="login-submit">
+          <span class="btn__label">Sign In</span>
+        </button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bottom" style="border-top: none;">
+    <span class="footer-bottom__copyright">© 2026 Janaki Professional Academy. All rights reserved.</span>
+    <span class="footer-bottom__meta">School Management ERP</span>
+  </div>
+</footer>
+
+<script src="js/toggle.js"></script>
+<script src="js/script.js"></script>
+<script>
+  /* Phase 1: demo-only auth stub. Phase 2: replace with firebase.auth().signInWithEmailAndPassword() */
+  document.getElementById('login-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var submitBtn = document.getElementById('login-submit');
+    var alertBox = document.getElementById('login-alert');
+
+    alertBox.style.display = 'none';
+    submitBtn.disabled = true;
+    submitBtn.querySelector('.btn__label').textContent = 'Signing in...';
+
+    setTimeout(function () {
+      /* Demo redirect — Phase 2 will check real credentials */
+      window.location.href = 'dashboard.html';
+    }, 700);
+  });
+</script>
+</body>
+</html>
